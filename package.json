@@ -1,0 +1,27 @@
+{
+  "name": "base64Int",
+  "version": "1.0.0",
+  "description": "Pure JS integer to/from base64 converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start --single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QubitProducts/base64int.git"
+  },
+  "author": "roberttod@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QubitProducts/base64int/issues"
+  },
+  "homepage": "https://github.com/QubitProducts/base64int",
+  "devDependencies": {
+    "karma": "^0.12.24",
+    "karma-chrome-launcher": "^0.1.5",
+    "karma-commonjs": "0.0.12",
+    "karma-expect": "^1.1.0",
+    "karma-mocha": "^0.1.9",
+    "mocha": "^2.0.1"
+  }
+}
