@@ -3,7 +3,7 @@ var base64Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 module.exports.encode = function encode64(num) {
   return map(toBase(num, 64), function (pos) {
     return base64Chars[pos];
-  }).join('');
+  }).join('') || base64Chars[0];
 };
 
 module.exports.decode = function decode64(base64) {
@@ -11,6 +11,8 @@ module.exports.decode = function decode64(base64) {
     return base64Chars.indexOf(pos);
   }), 64);
 };
+
+module.exports.alphabet = base64Chars;
 
 function fromBase(input, base) {
   var val = 0;
