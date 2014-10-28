@@ -12,8 +12,6 @@ module.exports.decode = function decode64(base64) {
   }), 64);
 };
 
-module.exports.alphabet = base64Chars;
-
 function fromBase(input, base) {
   var val = 0;
   for (var i = 0; i < input.length; i++) {
