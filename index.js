@@ -25,8 +25,9 @@ function fromBase(input, base) {
 function toBase(value, outputBase) {
   var digits = [];
   while (value > 0) {
-    digits.unshift(value % outputBase);
-    value = Math.floor(value / outputBase);
+    var remainder = value % outputBase;
+    digits.unshift(remainder);
+    value = (value - remainder) / outputBase;
   }
   return digits;
 }
