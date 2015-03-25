@@ -5,7 +5,7 @@ Pure JS integer to/from base64 converter compatible with IE8+, Opera, Firefox, C
 
 _Example_
 ```javascript
-var base64int = require('base64-int');
+var base64int = require('base64int');
 
 base64int.encode(123456);
 // returns "eJA"
