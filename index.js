@@ -3,8 +3,8 @@ var base64Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
 module.exports = {
   encode: function encode64(num) {
     return map(toBase(num, 64), function (pos) {
-      return base64Chars[pos];
-    }).join('') || base64Chars[0];
+      return base64Chars.charAt(pos);
+    }).join('') || base64Chars.charAt(0);
   },
   decode: function decode64(base64) {
     return fromBase(map(base64.split(''), function (pos) {
