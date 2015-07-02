@@ -1,6 +1,6 @@
 {
   "name": "base64int",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Pure JS integer to/from base64 converter",
   "main": "index.js",
   "scripts": {
