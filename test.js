@@ -15,12 +15,12 @@ describe('base64Int', function () {
     it('should return the character at the number\'s index', function () {
       var i = 0, l = 64;
       for (i = 0; i < l; i++) {
-        expect(base64Int.encode(i)).to.be(base64Chars[i]);
+        expect(base64Int.encode(i)).to.be(base64Chars.charAt(i));
       }
     });
 
   });
-  
+
   it('should encode arbitrary numbers into base 64', function () {
     expect(base64Int.encode(128)).to.be('CA');
     expect(base64Int.encode(129)).to.be('CB');
