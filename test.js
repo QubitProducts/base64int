@@ -27,4 +27,18 @@ describe('base64Int', function () {
     expect(base64Int.encode(1928736)).to.be('HW4g');
   });
 
+  describe('negative numbers', function () {
+    it('should encode/decode to the same number', function () {
+      for (var i = 2; i < 52; i++) {
+        var testNum = -(Math.pow(2, i) + Math.round(Math.random() * 10));
+        expect(base64Int.decode(base64Int.encode(testNum))).to.be(testNum);
+      }
+    });
+    it('should encode arbitrary numbers into base 64', function () {
+      expect(base64Int.encode(-128)).to.be('-CA');
+      expect(base64Int.encode(-129)).to.be('-CB');
+      expect(base64Int.encode(-1928736)).to.be('-HW4g');
+    });
+  })
+
 });
