@@ -1,17 +1,21 @@
 var base64Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 module.exports = {
-  encode: function encode64(num) {
-    return (prefix(num) + map(toBase(Math.abs(num), 64), function (pos) {
-      return base64Chars.charAt(pos);
-    }).join('')) || base64Chars.charAt(0);
-  },
-  decode: function decode64(base64) {
-    return (prefix(base64) ? -1 : 1) * fromBase(map(base64.replace(/^-/, '').split(''), function (pos) {
-      return base64Chars.indexOf(pos);
-    }), 64);
-  }
+  encode: encode64,
+  decode: decode64
 };
+
+function encode64(num) {
+  return (prefix(num) + map(toBase(Math.abs(num), 64), function (pos) {
+    return base64Chars.charAt(pos);
+  }).join('')) || base64Chars.charAt(0);
+}
+
+function decode64(base64) {
+  return (prefix(base64) ? -1 : 1) * fromBase(map(base64.replace(/^-/, '').split(''), function (pos) {
+    return base64Chars.indexOf(pos);
+  }), 64);
+}
 
 function fromBase(input, base) {
   var val = 0;
